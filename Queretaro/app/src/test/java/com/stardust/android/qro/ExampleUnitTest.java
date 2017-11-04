@@ -1,4 +1,4 @@
-package com.stardust.android.myapplication;
+package com.stardust.android.qro;
 
 import org.junit.Test;
 

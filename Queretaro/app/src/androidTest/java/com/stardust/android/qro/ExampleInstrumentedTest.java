@@ -1,4 +1,4 @@
-package com.stardust.android.myapplication;
+package com.stardust.android.qro;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
