@@ -1,4 +1,4 @@
-package com.stardust.android.qro.activity;
+package com.stardust.android.qro.activity.intro;
 
 import com.stardust.android.qro.presenter.Presenter;
 

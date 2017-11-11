@@ -11,7 +11,6 @@ import android.support.v4.view.ViewPager;
 
 import com.stardust.android.qro.R;
 import com.stardust.android.qro.activity.BaseActivity;
-import com.stardust.android.qro.activity.IntroPresenter;
 import com.stardust.android.qro.activity.MainActivity;
 import com.stardust.android.qro.fragment.intro.IntroFourFragment;
 import com.stardust.android.qro.fragment.intro.IntroOneFragment;
@@ -20,7 +19,6 @@ import com.stardust.android.qro.fragment.intro.IntroTwoFragment;
 import com.stardust.android.qro.preferences.Preferences;
 
 import butterknife.BindView;
-
 
 public class IntroActivity extends BaseActivity implements IntroPresenter.View {
 

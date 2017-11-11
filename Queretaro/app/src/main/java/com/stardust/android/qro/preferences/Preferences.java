@@ -1,7 +1,10 @@
 package com.stardust.android.qro.preferences;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.stardust.android.qro.model.User;
 
 
 public class Preferences {
@@ -12,14 +15,13 @@ public class Preferences {
     private static final String LASTNAME = "user.lastname";
     private static final String PHONE = "user.ic_phone_signin";
     private static final String EMAIL = "user.email";
-    private static final String USER_TYPE = "user.usertype";
-    private static final String REPUTATION = "user.reputation";
     private static final String REGISTER_TOKEN = "device.token";
 
     private static Preferences instance;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
 
+    @SuppressLint("CommitPrefEdits")
     private Preferences(Context context) {
         this.preferences = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
         this.editor = preferences.edit();
@@ -36,7 +38,7 @@ public class Preferences {
         return preferences.getInt(USER_ID, 0) != 0;
     }
 
-    /*public User getUser() {
+    public User getUser() {
         if (preferences.getInt(USER_ID, 0) != 0) {
             return User.Builder()
                     .userId(preferences.getInt(USER_ID, 0))
@@ -44,8 +46,6 @@ public class Preferences {
                     .lastName(preferences.getString(LASTNAME, null))
                     .phone(preferences.getString(PHONE, null))
                     .email(preferences.getString(EMAIL, null))
-                    .userType(preferences.getInt(USER_TYPE, 0))
-                    .reputation(preferences.getLong(REPUTATION, 0))
                     .build();
         }
         return User.Builder()
@@ -65,10 +65,8 @@ public class Preferences {
         editor.putString(LASTNAME, user.getLastName());
         editor.putString(PHONE, user.getPhone());
         editor.putString(EMAIL, user.getEmail());
-        editor.putInt(USER_TYPE, user.getUserType());
-        editor.putLong(REPUTATION, (long) user.getReputation());
         return editor.commit();
-    }*/
+    }
 
     public void registerToken(boolean register){
         editor.putBoolean(REGISTER_TOKEN,register);
