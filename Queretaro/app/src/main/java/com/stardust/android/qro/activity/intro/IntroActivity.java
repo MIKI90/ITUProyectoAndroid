@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
+import android.view.ViewGroup.LayoutParams;
 
 import com.stardust.android.qro.R;
 import com.stardust.android.qro.activity.BaseActivity;
@@ -17,6 +19,7 @@ import com.stardust.android.qro.fragment.intro.IntroOneFragment;
 import com.stardust.android.qro.fragment.intro.IntroThreeFragment;
 import com.stardust.android.qro.fragment.intro.IntroTwoFragment;
 import com.stardust.android.qro.preferences.Preferences;
+import com.stardust.android.widget.ViewPagerIndicator;
 
 import butterknife.BindView;
 
@@ -39,9 +42,19 @@ public class IntroActivity extends BaseActivity implements IntroPresenter.View {
         setContentView(R.layout.activity_intro);
 
         HomePageAdapter adapter = new HomePageAdapter(getSupportFragmentManager());
-
+        initPager();
         pager.setAdapter(adapter);
 
+    }
+
+    private void initPager() {
+        final ViewPager.LayoutParams layoutParams = new ViewPager.LayoutParams();
+        layoutParams.width = LayoutParams.MATCH_PARENT;
+        layoutParams.height = LayoutParams.WRAP_CONTENT;
+        layoutParams.gravity = Gravity.BOTTOM;
+
+        final ViewPagerIndicator viewPagerIndicator = new ViewPagerIndicator(this);
+        pager.addView(viewPagerIndicator, layoutParams);
     }
 
     private class HomePageAdapter extends FragmentPagerAdapter {
