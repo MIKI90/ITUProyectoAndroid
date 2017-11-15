@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.ViewGroup.LayoutParams;
 
+import com.rd.PageIndicatorView;
 import com.stardust.android.qro.R;
 import com.stardust.android.qro.activity.BaseActivity;
 import com.stardust.android.qro.activity.MainActivity;
@@ -25,7 +26,10 @@ import butterknife.BindView;
 
 public class IntroActivity extends BaseActivity implements IntroPresenter.View {
 
-    @BindView(R.id.pager) ViewPager pager;
+    @BindView(R.id.indicator)
+    PageIndicatorView indicator;
+    @BindView(R.id.pager)
+    ViewPager pager;
 
 
     @Override
@@ -42,8 +46,8 @@ public class IntroActivity extends BaseActivity implements IntroPresenter.View {
         setContentView(R.layout.activity_intro);
 
         HomePageAdapter adapter = new HomePageAdapter(getSupportFragmentManager());
-        initPager();
         pager.setAdapter(adapter);
+        indicator.setViewPager(pager);
 
     }
 
