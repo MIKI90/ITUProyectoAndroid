@@ -46,7 +46,6 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp">
 
-
         <Button
             android:id="@+id/bntInisiarSesion"
             android:layout_width="match_parent"
@@ -60,8 +59,6 @@
             android:layout_marginTop="16dp"
             android:text="Registrar numero telefonico" />
 
-
     </LinearLayout>
-
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.stardust.android.qro.activity;
+package com.stardust.android.qro;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,8 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.stardust.android.qro.R;
 
 public class MainActivity extends AppCompatActivity {
 
